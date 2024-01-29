@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace abanAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240127220321_addSomeDates")]
-    partial class addSomeDates
+    [Migration("20240129015229_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

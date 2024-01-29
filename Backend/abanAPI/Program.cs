@@ -34,29 +34,19 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+ApplyMigration();
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+void ApplyMigration()
 {
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    using (var scope = app.Services.CreateScope())
+    {
+        var _db = scope.ServiceProvider.GetRequiredService<DataContext>();
+
+        if (_db.Database.GetPendingMigrations().Count() > 0)
+        {
+            _db.Database.Migrate();
+        }
+    }
 }
