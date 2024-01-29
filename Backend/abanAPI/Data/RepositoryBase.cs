@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Data;
@@ -44,7 +45,7 @@ namespace abanAPI.Data
             return false;
         }
 
-        public async Task<IEnumerable<TEntity>> SearchAsync(System.Linq.Expressions.Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEnumerable<TEntity>> SearchAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return await Task.Run(() => dataContext.Set<TEntity>().Where(predicate));
         }
