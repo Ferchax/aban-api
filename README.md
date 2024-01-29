@@ -10,3 +10,8 @@ Indicaciones para correr el proyecto en Visual Studio Code:
 NOTA: Necesitamos tener instaladas las siguientes 2 extensiones para VS Code:
 ![image](https://github.com/Ferchax/aban-api/assets/10538408/559d15f4-3575-4230-958a-1f622e521cfd)
 
+Indicaciones para correr el proyecto en Visual Studio 2022:
+
+1. Clonar el repositorio con el comando "git clone https://github.com/Ferchax/aban-api.git"
+2. Entrar al directorio de la solucion, por defecto es "aban-api" y ejecutar la solucion (aban-api.sln)
+3. Correr el proyecto.
