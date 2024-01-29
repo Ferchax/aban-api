@@ -2,7 +2,7 @@ Indicaciones para correr el proyecto en Visual Studio Code:
 
 1. Clonar el repositorio con el comando "git clone https://github.com/Ferchax/aban-api.git"
 2. Cambiar al directorio del proyecto con el comando change directory "cd aban-api/backend/abanAPI"
-3. Parados en el directorio "aban-api/backend/abanAPI" abrir el VS Code con "code ."
+3. Parados en el directorio "aban-api/backend/abanAPI" abrir el VS Code con "code ." o si no quremos abrir el VS Code podemos ir directamente al paso 5 siempre y cuando estemos antes parados en "aban-api/backend/abanAPI"
 4. Abrir la terminal de VS Code, si estas en Windows puede ser con "Control + Shift + `"
 5. Ejecutar el comando "dotnet watch run" el cual se ocupara de instalar las dependencias y levantar la db si no existe y aplicar el seed, para luego levantar el swagger con todos los endpoints.
 
